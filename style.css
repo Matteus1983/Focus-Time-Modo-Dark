@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --bg-color: #FFFFFF;
+    --bg-color-selected: blue;
+    --txt-color: hsla(240, 6%, 21%, 1);
+    --card-color: #E1E1E6;
+    --card-hover: #02799D;
+    --card-fill: #323238;
+    --card-fill-hover: #FFFFFF;
+
+}
+.dark {
+    --bg-color:hsla(240, 5%, 7%, 1);
+    --tx-color:hsla(0, 0%, 100%, 1);
+    --card-color:hsla(240, 6%, 17%, 1);
+    --card-fill:hsla(240, 7%, 78%, 1);
+    --card-hover: #0A3442;
+    --card-fill-hover: #FFFFFF;
+    --bg-color-selected:rgb(4, 4, 49);
+}
+.hide { 
+    display: none;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--fc-color);
+    font-family: 'Roboto', sans-serif;
+}
+.lights {
+    display: flex;
+    justify-content: end;
+    padding: 4rem 5rem 0;
+}
+.moon, .sun {
+    background: transparent;
+    width: 5rem;
+    border: none;
+    height: 5rem;
+    cursor: pointer;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 19.2rem;
+}
+#timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+}
+span {
+    color: var(--tx-color)
+}
+#controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    width: clamp(10rem, 10rem + 30vw, 22.8rem);
+    height: clamp(8rem, 5rem + 10vw, 10.8rem);
+}
+.play, .pause, .more , .less, .set, .stop {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: clamp(3.2rem, 2rem + 12vw, 6.4rem);
+}
+#sound-cards {
+    margin-top: 11rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap; /* server para quebrar linha */
+    width: 30.8rem; 
+    height: 33.6rem;
+    gap: 3.2rem;
+}
+.music {
+    width: 13.8rem;
+    height: 15.2rem;
+    border-radius: 2.4rem;
+    border: none;
+    background: var(--card-color);
+}
+.music:hover, .music:hover svg path { 
+    background: var(--card-hover);
+    fill: var(--card-fill-hover); /* mudar a cor do svg */
+    cursor: pointer;
+}
+.music svg path, #btn svg path {
+    fill: var(--card-fill);
+}
+.active {
+    background: var(--bg-color-selected)
+}
+.volume {
+    appearance: none;   
+    margin-top: 2rem;
+    width: 9rem;
+    height: .7rem;
+    background: var(--card-fill);
+    border-radius: 0.5rem;
+}
